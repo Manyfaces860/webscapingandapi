@@ -8,7 +8,8 @@ class Post(pydantic.BaseModel):
 
 while True:
     try:
-        conn = psycopg2.connect(host='localhost' , database='quoteapibyfast' , user='postgres',password='newPassword' , cursor_factory=RealDictCursor)
+        # use localhost if your database exist on your local machine
+        conn = psycopg2.connect(host='localhost' , database='{yourdatabasename}' , user='{username}',password='{databasePassword}' , cursor_factory=RealDictCursor)
         cursor = conn.cursor()
         print('database connection is successfull')
         break        
